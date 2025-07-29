@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Product Recommendation & Sentiment Analysis</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <style>
+        body { background-color: #f8f9fa; }
+        .header-bar { background-color: #082a4e; color: white; padding: 15px; font-size: 22px; text-align: center; }
+        .footer { text-align: center; padding: 15px; background-color: #f1f1f1; margin-top: 30px; }
+        .card-header { background-color: #082a4e; color: white; }
+        table th { background-color: #082a4e; color: white; }
+        .custom-btn { background-color: #082a4e; color: white; border: 1px solid #082a4e; }
+        .custom-btn:hover { background-color: #082a4e; color: white; }
+    </style>
+</head>
+<body>
+    <div class="header-bar">
+        🛒 Product Recommendation and Sentiment Analysis
+    </div>
+
+    <div class="container mt-4">
+        <form method="POST" action="/predict">
+            <div class="mb-3">
+                <input type="text" class="form-control" name="username" placeholder="Enter Username" required>
+            </div>
+            <button type="submit" class="btn w-100 custom-btn">Get Recommendations</button>
+        </form>
+
+      {% if error_message %}
+         <div class="alert alert-danger mt-3">{{ error_message }}</div>
+      {% endif %}
+
+        {% if recommendations %}
+        <div class="card mt-4">
+            <div class="card-header">
+                👍 Top 5 Recommended Products for "{{ username }}"
+            </div>
+            <div class="card-body">
+                <table class="table table-bordered text-center">
+                    <thead>
+                        <tr>
+                            <th>Product Name</th>
+                            <th>Brand</th>
+                            <th>Recommendation %</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for rec in recommendations %}
+                        <tr>
+                            <td>{{ rec.product }}</td>
+                            <td>{{ rec.brand }}</td>
+                            <td>{{ rec.recommendation }}%</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+
+    <div class="footer">
+        © Created by Rupa Gattani, 2025
+    </div>
+</body>
+</html>
