@@ -68,44 +68,44 @@ Sentiment_Based_Product_Recommendation_System/
 ## ⚙️ Setup Instructions
 Follow these steps to get the project up and running on your local machine.
 
-1.  **Clone Repository:**
+1.  Clone Repository:
    git clone [https://github.com/your-username/sentiment-recommendation.git](https://github.com/your-username/sentiment-recommendation.git)
    cd sentiment-recommendation
 
-2.  **Create Virtual Environment**
+2.  Create Virtual Environment
    It is highly recommended to use a virtual environment to manage dependencies.
    python -m venv venv
    venv\Scripts\activate
 
-3.  **Install Dependencies**
+3.  Install Dependencies
    Once your virtual environment is active, install the required packages:
    pip install -r requirements.txt
 
-4.  **Run Locally**
+4. Run Locally
    After installing dependencies, you can run the Flask application:
    python app.py
 
 Open your web browser and visit: http://127.0.0.1:5000
 
-## ☁️ **Heroku Deployment**
+## ☁️ Heroku Deployment
 This project is set up for easy deployment to Heroku.
 
-1.  **Login & Create App**
+1.  Login & Create App
      Ensure you have the Heroku CLI installed and logged in.
      heroku login
      heroku create your-app-name # Replace 'your-app-name' with a unique name
 
-2.  **Push Code**
+2.  Push Code
      Commit your changes and push them to the Heroku remote:
      git add .
      git commit -m "Initial commit for Heroku deployment"
      git push heroku main
 
-3.  **Open App**
+3.  Open App
      Once the deployment is complete, open your application in the browser:
      heroku open
 
-##💡 **Usage**
+##💡 Usage
 
 * Navigate to the deployed web application (or run it locally).
 * Enter an existing username in the provided input field.
